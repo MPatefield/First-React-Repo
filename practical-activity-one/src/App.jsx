@@ -1,9 +1,10 @@
 import heroImg from './assets/hero.png'
 import './App.css'
 import ProfileCard from './Profilecard'
+import './Profilecard.css'
 
 function App() {
-
+// Create an array of profile objects with name, image, jobTitle, and bio properties
   const profiles = [
     { name: "Matthew Patefield", image: heroImg, jobTitle: "Software Engineer", bio: "Passionate about creating innovative web applications." 
     },
@@ -13,6 +14,7 @@ function App() {
   ]
   return (
    <div>
+    {/* Render the ProfileCard components for each profile in the profiles array using map function */}
     {profiles.map((profile) => (
       <ProfileCard key={profile.name} name={profile.name} image={profile.image} jobTitle={profile.jobTitle} bio={profile.bio} />
     ))}
