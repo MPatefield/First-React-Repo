@@ -1,5 +1,5 @@
 .profile-card-container {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 }
@@ -11,16 +11,16 @@
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.profile-card h2 {
+  font-size: 1.5em;
+  margin-bottom: 8px;
+}
 .profile-card img {
   border-radius: 50%;
   width: 100px;
   height: 100px;
   object-fit: cover;
   margin-bottom: 16px;
-}
-.profile-card h1 {
-  font-size: 1.5em;
-  margin: 0;
 }
 .profile-card p {
   font-size: 1em;
