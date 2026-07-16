@@ -1,11 +1,15 @@
 import React from 'react'
+import jobBoardImage from '../images/jobs.jpg'
 
-const header = () => {
+const Header = () => {
   return (
-    <div>
-      
-    </div>
+    <header>
+      <h1>Job Board</h1>
+      <a href="/">
+        <img style={{ width: '100%', height: '10vh' }} src={jobBoardImage} alt="Job Board" />
+      </a>
+    </header>
   )
 }
 
-export default header
+export default Header
