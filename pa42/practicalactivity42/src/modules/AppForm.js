@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import './AppForm.css'
+
 const AppForm = () => {
     const [jobTitle, setJobTitle] = useState("")
     const [processValue, setProcessValue] = useState("")
@@ -29,7 +31,7 @@ const AppForm = () => {
                     </div>
                 </div>
                 <div>
-                    <select value={processValue} onChange={(e) => { const value = e.target.value; setProcessValue(value) }}>
+                    <select className="jobStatus" value={processValue} onChange={(e) => { const value = e.target.value; setProcessValue(value) }}>
                         <option value="Start">Start Process</option>
                         <option value="stopped">Stop Process</option>
                         <option value="completed">Complete Process</option>
