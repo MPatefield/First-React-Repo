@@ -33,6 +33,27 @@ function App() {
 
       <Header />
 
+    <main classname="headerfunc">
+      <section classname="col">Section 1</section>
+      <section classname="col">Section 2</section>
+      <section classname="col">Section 3</section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       {/*Button to toggle the visibility of the job list*/}
 
       <button onClick={() => setList(!list)}>
@@ -60,7 +81,7 @@ function App() {
           <option value="stopped">Stopped</option>
         </select>
         <button onClick={addJobToList}>Add Job</button>
-      </div>
+      </div>/*
 
       <Footer />
     </div>
