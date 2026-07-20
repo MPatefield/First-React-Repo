@@ -1,0 +1,17 @@
+.tag{
+    font-size: 14px;
+    font-weight: 100;
+    background-color: aqua;
+    padding: 10px;
+
+}
+
+.tag:hover{
+    color: antiquewhite;
+    background-color: black;
+}
+
+.tag:active{
+    background-color: red;
+    color: greenyellow;
+}

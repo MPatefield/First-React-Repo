@@ -20,7 +20,7 @@
 .headerfunc{
   display: flex;
   justify-content: space-evenly;
-  margin: 40 px 0px 0px 0px;
+  margin: 40px 0px 0px 0px;
   padding: 30px 8%;
 }
 
@@ -56,24 +56,6 @@
     align-items: center;
     justify-content: space-between;
 
-}
-
-.tag{
-    font-size: 14px;
-    font-weight: 100;
-    background-color: aqua;
-    padding: 10px;
-
-}
-
-.tag:hover{
-    color: antiquewhite;
-    background-color: black;
-}
-
-.tag:active{
-    background-color: red;
-    color: greenyellow;
 }
 
 .jobStatus{

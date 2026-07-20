@@ -4,14 +4,19 @@ import { useState } from 'react';
 import JobList from './modules/JobList';
 import Header from './modules/Header';
 import Footer from './modules/Footer';
+import JobColumns from './modules/JobColumns';
+
 
 function App() {
+  const needToStartImg = "https://placehold.co/60x60?text=Start";
+  const inProgressImg = "https://placehold.co/60x60?text=Prog";
+  const completedImg = "https://placehold.co/60x60?text=Done";
   const [list, setList] = useState(true);
   const [newJob, setNewJob] = useState({ id: '', name: '', status: '' });
   const [jobs, setJobs] = useState([
-    { id: 1, name: 'Email Extractor', status: 'running' },
-    { id: 2, name: 'Data Analyser', status: 'running' },
-    { id: 3, name: 'Report Generator', status: 'stopped' },
+    { id: 1, name: 'Email Extractor', status: 'need to start' },
+    { id: 2, name: 'Data Analyser', status: 'in progress' },
+    { id: 3, name: 'Report Generator', status: 'completed' },
   ]);
 
   const addJobToList = () => {
@@ -33,26 +38,11 @@ function App() {
 
       <Header />
 
-    <main className="headerfunc">
-      <section className="col">Section 1</section>
-      <section className="col">Section 2</section>
-      <section className="col">Section 3</section>
-    </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <main className="headerfunc">
+        <JobColumns value='Need to Start' img={needToStartImg} jobList={jobs.filter(j => j.status === 'need to start')} />
+        <JobColumns value='In Progress' img={inProgressImg} jobList={jobs.filter(j => j.status === 'in progress')} />
+        <JobColumns value='Completed' img={completedImg} jobList={jobs.filter(j => j.status === 'completed')} />
+      </main>
 
       {/*Button to toggle the visibility of the job list*/}
 
@@ -77,8 +67,9 @@ function App() {
           onChange={handleInputChange} />
         <select name="status" value={newJob.status} onChange={handleInputChange}>
           <option value="">Select Status</option>
-          <option value="running">Running</option>
-          <option value="stopped">Stopped</option>
+          <option value="need to start">Need to start</option>
+          <option value="in progress">In Progress</option>
+          <option value="completed">Completed</option>
         </select>
         <button onClick={addJobToList}>Add Job</button>
       </div>
