@@ -8,9 +8,13 @@ import JobColumns from './modules/JobColumns';
 
 
 function App() {
+
+
   const needToStartImg = "https://placehold.co/60x60?text=Start";
   const inProgressImg = "https://placehold.co/60x60?text=Prog";
   const completedImg = "https://placehold.co/60x60?text=Done";
+
+
   const [list, setList] = useState(true);
   const [newJob, setNewJob] = useState({ id: '', name: '', status: '' });
   const [jobs, setJobs] = useState([
@@ -31,6 +35,14 @@ function App() {
     setNewJob({ ...newJob, [name]: value });
   };
 
+  const handleDelete = (id) => {
+        const updatedJobs = jobs.filter(job => job.id !== id);
+        setJobs(updatedJobs);
+    }
+
+  const updateJobStatus = (id, newStatus) => {
+    setJobs(jobs.map((job) => job.id === id ? {...job,status: newStatus}: job))
+  }
 
   return (
 
@@ -39,9 +51,9 @@ function App() {
       <Header />
 
       <main className="headerfunc">
-        <JobColumns value='Need to Start' img={needToStartImg} jobList={jobs.filter(j => j.status === 'need to start')} />
-        <JobColumns value='In Progress' img={inProgressImg} jobList={jobs.filter(j => j.status === 'in progress')} />
-        <JobColumns value='Completed' img={completedImg} jobList={jobs.filter(j => j.status === 'completed')} />
+        <JobColumns value='Need to Start' updateJobStatus={updateJobStatus} handleDelete={handleDelete} img={needToStartImg} jobList={jobs.filter(j => j.status === 'need to start')} />
+        <JobColumns value='In Progress' updateJobStatus={updateJobStatus} handleDelete={handleDelete} img={inProgressImg} jobList={jobs.filter(j => j.status === 'in progress')} />
+        <JobColumns value='Completed' updateJobStatus={updateJobStatus} handleDelete={handleDelete} img={completedImg} jobList={jobs.filter(j => j.status === 'completed')} />
       </main>
 
       {/*Button to toggle the visibility of the job list*/}
