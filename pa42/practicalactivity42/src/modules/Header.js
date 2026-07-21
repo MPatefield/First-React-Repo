@@ -9,7 +9,6 @@ const Header = () => {
       <a href="/">
         <img style={{ width: '100vw', height: '10vh' }} src={jobBoardImage} alt="Job Board" />
       </a>
-      <AppForm/>
     </header>
   )
 }
