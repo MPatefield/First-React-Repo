@@ -16,9 +16,9 @@ function App() {
 
   const [list, setList] = useState(true);
   const [jobs, setJobs] = useState([
-    { id: 1, name: 'Email Extractor', status: 'need to start' },
-    { id: 2, name: 'Data Analyser', status: 'in progress' },
-    { id: 3, name: 'Report Generator', status: 'completed' },
+    { id: 1, name: 'Email Extractor', status: 'need to start', categories: [] },
+    { id: 2, name: 'Data Analyser', status: 'in progress', categories: [] },
+    { id: 3, name: 'Report Generator', status: 'completed', categories: [] },
   ]);
 
   const addJobToList = (newJob) => {

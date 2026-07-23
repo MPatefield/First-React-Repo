@@ -1,9 +1,19 @@
+.button-container{
+    display: flex;
+    flex-direction: row;
+}
+
 .tag{
     font-size: 14px;
     font-weight: 100;
     background-color: aqua;
     padding: 10px;
 
+}
+
+.tag-selected{
+    background-color: red;
+    color: aqua
 }
 
 .tag:hover{
