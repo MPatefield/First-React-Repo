@@ -6,6 +6,7 @@ import Header from './modules/Header';
 import Footer from './modules/Footer';
 import JobColumns from './modules/JobColumns';
 import JobForm from './modules/JobForm';
+import CategorySelector from './modules/CategorySelector';
 
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
       
 
       <Footer />
+      <CategorySelector/>
     </div>
 
   );
