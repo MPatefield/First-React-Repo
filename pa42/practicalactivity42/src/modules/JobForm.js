@@ -111,23 +111,23 @@ const JobForm = (props) => {
 
             {/* Shows a readable list of whatever's currently selected */}
             <p>Selected categories: {categories.join(', ')}</p>
+            <div className="controls-container">
+                <button onClick={() => setCategories([])} type='button'>Reset Categories</button>
 
-            <button onClick={()=>setCategories([])} type='button'>Reset Categories</button>
+                {/* Controlled dropdown for job status */}
+                <select name="status" value={newJob.status} onChange={handleInputChange}>
+                    <option value="">Select Status</option>
+                    <option value="need to start">Need to start</option>
+                    <option value="in progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
 
-            {/* Controlled dropdown for job status */}
-            <select name="status" value={newJob.status} onChange={handleInputChange}>
-                <option value="">Select Status</option>
-                <option value="need to start">Need to start</option>
-                <option value="in progress">In Progress</option>
-                <option value="completed">Completed</option>
-            </select>
+                {/* Manually clears the form without submitting */}
+                <button type="reset" onClick={resetForm}>Reset Form</button>
 
-            {/* Manually clears the form without submitting */}
-            <button type="reset" onClick={resetForm}>Reset Form</button>
-
-            {/* Disabled until id, name, and status are all filled in */}
-            <button type="submit" disabled={newJob.id === "" || newJob.name === "" || newJob.status === "" || categories.length < 1}>Add Job</button>
-
+                {/* Disabled until id, name, and status are all filled in */}
+                <button type="submit" disabled={newJob.id === "" || newJob.name === "" || newJob.status === "" || categories.length < 1}>Add Job</button>
+            </div>
             {/* Only rendered while success is true */}
             {success && <p>Job added successfully!</p>}
         </form>

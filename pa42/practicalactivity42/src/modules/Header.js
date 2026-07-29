@@ -1,14 +1,14 @@
 import React from 'react'
 import jobBoardImage from '../images/jobs.jpg'
-import AppForm from './AppForm.js'
+import'./Header.css'
 
 const Header = () => {
   return (
     <header className="headtop">
-      <h1>Job Board</h1>
       <a href="/">
-        <img style={{ width: '100vw', height: '10vh' }} src={jobBoardImage} alt="Job Board" />
+        <img className="logo" src={jobBoardImage} alt="Job Board" />
       </a>
+      <h1>Job Board</h1>
     </header>
   )
 }

@@ -5,3 +5,30 @@
     justify-content: center;
     gap: 15px;
 }
+
+.controls-container{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.controls-container button{
+    margin-top: 2px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: antiquewhite;
+    color:darkolivegreen
+}
+
+.controls-container select{
+    border-radius: 5px;
+    margin-top: 2px;
+}
+
+.add-job-form input{
+    color: darkolivegreen;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: antiquewhite;
+}

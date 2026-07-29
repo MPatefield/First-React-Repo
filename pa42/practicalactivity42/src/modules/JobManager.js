@@ -3,6 +3,7 @@ import { useState } from 'react';
 import JobList from './JobList';
 import JobColumns from './JobColumns';
 import JobForm from './JobForm';
+import './JobManager.css'
 
 const JobManager = () => {
 

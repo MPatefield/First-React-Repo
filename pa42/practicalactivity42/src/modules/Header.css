@@ -1,0 +1,10 @@
+.headtop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo{
+    width: 300px;
+    height: auto;
+}

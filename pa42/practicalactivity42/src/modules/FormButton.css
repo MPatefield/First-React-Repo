@@ -6,22 +6,14 @@
 .tag{
     font-size: 14px;
     font-weight: 100;
-    background-color: aqua;
+    background-color: antiquewhite;
     padding: 10px;
-
+    border-radius: 5px;
+    color: darkolivegreen
 }
 
 .tag-selected{
-    background-color: red;
-    color: aqua
-}
-
-.tag:hover{
+    background-color: darkolivegreen;
     color: antiquewhite;
-    background-color: black;
 }
 
-.tag:active{
-    background-color: red;
-    color: greenyellow;
-}
