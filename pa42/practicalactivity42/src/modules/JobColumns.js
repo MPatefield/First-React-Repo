@@ -1,5 +1,6 @@
 import React from 'react'
 import '../JobColumn.css'
+import JobCard from './JobCard'
 
 const JobColumns = (props) => {
   const jobList = props.jobList
@@ -11,15 +12,8 @@ const JobColumns = (props) => {
         {value}<img className='col-icon' src={props.img} alt={value} />
       </h2>
       {jobList.map((job) =>
-        <div key={job.id}>
-          <p>{job.name} - {job.status} - {job.categories.join(', ')}</p>
-          <select className="edit-select" value={job.status} onChange={(e) => props.updateJobStatus(job.id, e.target.value)} >
-            <option value='need to start'>Need to Start</option>
-            <option value='in progress'>In Progress</option>
-            <option value='completed'>Completed</option>
-          </select>
-          <button className="delete-btn" onClick={() => props.handleDelete(job.id)}>Delete</button>
-        </div>)}
+          <JobCard key={job.id} job={job} updateJobStatus={props.updateJobStatus} handleDelete={props.handleDelete}/>
+        )}
     </section>
 
   )

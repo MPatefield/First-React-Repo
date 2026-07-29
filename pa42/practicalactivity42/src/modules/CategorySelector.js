@@ -6,10 +6,10 @@ const CategorySelector = () => {
     // (an object of CSS properties, not a plain CSS string).
     // "default" represents "nothing meaningfully selected" styling.
     const categoryStyles = {
-        readEmails: { backgroundColor: 'orange' },
-        sendEmails: { backgroundColor: 'yellow' },
-        webParsing: { backgroundColor: 'blue' },
-        default: { backgroundColor: 'white' }
+        readEmails: { backgroundColor: 'orange', transition: 'background-color 0.3s ease' },
+        sendEmails: { backgroundColor: 'yellow', transition: 'background-color 0.3s ease' },
+        webParsing: { backgroundColor: 'blue', transition: 'background-color 0.3s ease' },
+        default: { backgroundColor: 'white', transition: 'background-color 0.3s ease' }
     };
 
     // Tracks which single category is currently selected, as a plain string.
@@ -35,6 +35,8 @@ const CategorySelector = () => {
                 - Its own inline style is chosen with a ternary: if THIS button's
                   category matches the current selection, use its own colour
                   from categoryStyles; otherwise, fall back to the default (white). */}
+
+            <button onClick={()=>setCategory("default")}>Reset</button>
             <button
                 style={category === "readEmails" ? categoryStyles.readEmails : categoryStyles.default}
                 onClick={() => setCategory("readEmails")}>
